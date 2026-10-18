@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/legacy-paths.mjs",
     "preview": "astro preview",
     "check": "astro check && node scripts/figures.mjs",
     "test": "playwright test",

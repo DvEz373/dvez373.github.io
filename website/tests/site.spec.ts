@@ -1,7 +1,7 @@
 import { test, expect, type Page } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
-const pages = ["", "experience/", "education/", "projects/", "projects/sonodirect/", "projects/tw-fault-locator/", "skills/", "about/", "card/", "card/print/"];
+const pages = ["", "experience/", "education/", "projects/", "projects/sonodirect/", "projects/tw-fault-locator/", "skills/", "about/", "namecard/", "namecard/print/"];
 
 function collectErrors(page: Page) {
   const errors: string[] = [];
@@ -244,11 +244,30 @@ test("pages fit a 320 px phone without sideways scroll", async ({ page }, info) 
   test.skip(info.project.name !== "mobile", "phone widths only");
   // The name card once grew to its longest contact row (bug found 2026-10-14).
   await page.setViewportSize({ width: 320, height: 700 });
-  for (const path of ["", "experience/", "projects/tw-fault-locator/", "card/"]) {
+  for (const path of ["", "experience/", "projects/tw-fault-locator/", "namecard/"]) {
     await page.goto(path);
     // Compare with 320, not innerWidth: a phone browser widens its layout viewport to fit the content.
     expect(await page.evaluate(() => document.documentElement.scrollWidth), `/${path}`).toBeLessThanOrEqual(320);
   }
+});
+
+test("old project-site and /card/ links forward to the new pages", async ({ page, request }) => {
+  // Printed name cards and their QR codes point to /Personal-Profile-Portfolio/card/ (moved 2026-10-18).
+  for (const [from, to] of [
+    ["Personal-Profile-Portfolio/card/", "/namecard/"],
+    ["Personal-Profile-Portfolio/card/print/", "/namecard/print/"],
+    ["Personal-Profile-Portfolio/", "/"],
+    ["Personal-Profile-Portfolio/projects/sonodirect/", "/projects/sonodirect/"],
+    ["card/", "/namecard/"],
+  ]) {
+    await page.goto(from);
+    await expect(page).toHaveURL(new RegExp(`${to.replace(/\//g, "\\/")}$`));
+    await expect(page.locator("h1")).toHaveCount(1);
+  }
+  await page.goto("Personal-Profile-Portfolio/experience/#teep-ntust");
+  await expect(page).toHaveURL(/\/experience\/#teep-ntust$/);
+  const vcf = await request.get("Personal-Profile-Portfolio/devin-ezekiel-purba.vcf");
+  expect(await vcf.text()).toContain("BEGIN:VCARD");
 });
 
 test("unknown pages show the 404 page", async ({ page }) => {
@@ -258,14 +277,14 @@ test("unknown pages show the 404 page", async ({ page }) => {
 });
 
 test("name card links contact routes and shows a scannable QR", async ({ page, request }) => {
-  await page.goto("card/");
+  await page.goto("namecard/");
   for (const name of ["Save contact", "Email", "WhatsApp", "LinkedIn", "Instagram", "GitHub", "Website"]) {
     await expect(page.getByRole("link", { name: new RegExp(name) }).first()).toBeVisible();
   }
   await expect(page.locator('a[href^="https://wa.me/62"]')).toHaveCount(1);
   await page.getByRole("button", { name: "Show QR" }).click();
   await expect(page.locator("dialog[open] .qr-box svg")).toBeVisible();
-  const qr = await request.get("card-qr.svg");
+  const qr = await request.get("namecard-qr.svg");
   expect(qr.status()).toBe(200);
   expect(await qr.text()).toContain("<svg");
 });

@@ -7,7 +7,7 @@
 
 /** Which product a path belongs to. First match wins, so list specific prefixes first. */
 export const products = [
-  { id: "product:card", label: "Name card", summary: "Phone card, print card, QR and vCard; built with the website", paths: ["website/src/pages/card/", "website/src/pages/card-qr.svg.ts", "website/src/pages/devin-ezekiel-purba.vcf.ts", "website/src/lib/qr.ts", "website/src/layouts/Bare.astro", "docs/card/"] },
+  { id: "product:card", label: "Name card", summary: "Phone card, print card, QR and vCard; built with the website", paths: ["website/src/pages/namecard/", "website/src/pages/namecard-qr.svg.ts", "website/src/pages/devin-ezekiel-purba.vcf.ts", "website/src/lib/qr.ts", "website/src/layouts/Bare.astro", "docs/card/"] },
   { id: "product:cv", label: "CV", summary: "Two-page ATS-friendly LaTeX CV, personal and work variants", paths: ["cv/", ".github/workflows/build-cv.yml", "docs/cv/"] },
   { id: "product:website", label: "Website", summary: "Astro 7 portfolio on GitHub Pages", paths: ["website/", ".github/workflows/website.yml", "docs/website/", "design/"] },
   { id: "product:project", label: "Project docs and tooling", summary: "Cross-cutting docs, agent brief, knowledge graph", paths: ["docs/", "scripts/", "CLAUDE.md", "AGENTS.md", "README.md", ".github/", ".gitignore"] },
@@ -22,7 +22,7 @@ export const outputs = [
 ];
 
 export const hosts = [
-  { id: "host:github-pages", label: "GitHub Pages", summary: "https://dvez373.github.io/Personal-Profile-Portfolio/", from: ["output:pages-site"] },
+  { id: "host:github-pages", label: "GitHub Pages", summary: "https://dvez373.github.io/ (user site; old project-site paths forward)", from: ["output:pages-site"] },
 ];
 
 /** Rules and the paths they govern. Details live in the doc named in "doc". */
@@ -44,7 +44,7 @@ export const decisions = [
   { id: "decision:A1", label: "Astro 7 + TypeScript, no UI framework runtime", affects: ["website/"] },
   { id: "decision:A2", label: "YAML and Markdown content, Zod-validated", affects: ["website/src/content.config.ts"] },
   { id: "decision:A5", label: "Grid & Signal visual direction", affects: ["website/src/styles/global.css", "website/src/components/"] },
-  { id: "decision:N1", label: "Card web page + QR + vCard, no Wallet pass", affects: ["website/src/pages/card/"] },
+  { id: "decision:N1", label: "Card web page + QR + vCard, no Wallet pass", affects: ["website/src/pages/namecard/"] },
   { id: "decision:D1", label: "No names in client case studies", affects: ["website/src/content/projects/"] },
   { id: "decision:D4", label: "My part lines come from Devin", affects: ["website/src/content/projects/"] },
   { id: "decision:D5", label: "Employer only in job history", affects: ["website/src/data/profile.yaml", "website/src/data/experience.yaml"] },

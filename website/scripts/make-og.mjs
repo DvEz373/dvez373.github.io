@@ -3,7 +3,7 @@
 import { chromium } from "@playwright/test";
 import { execFileSync } from "node:child_process";
 
-const base = process.env.OG_URL ?? "http://localhost:4321/Personal-Profile-Portfolio/og-card/";
+const base = process.env.OG_URL ?? "http://localhost:4321/og-card/";
 const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
 await page.goto(base, { waitUntil: "networkidle" });

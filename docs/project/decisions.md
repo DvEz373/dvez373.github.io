@@ -21,6 +21,7 @@ One line per decision that still holds, with where the full reasoning lives. New
 | A6 | 2026-10-03 | v4.1: one typeface (Geist), no section numbers or FIG labels, motion pass | Simpler hierarchy | [work log](../website/03-work-log.md) step 9 |
 | A7 | 2026-10-03 | Motion: 120 / 240 / 400 ms, no scroll-jacking, `prefers-reduced-motion` respected | NN/g and WCAG 2.3.3 | 05 §5 |
 | A8 | 2026-10-03 | Budgets: JS ≤ 40 KB gzip per page, no serious axe violations, keyboard access everywhere | Fast and accessible | 05 §6 |
+| A9 | 2026-10-18 | Site at the root, <https://dvez373.github.io/>: repository renamed to `DvEz373.github.io` (user site), base `/`; forwarding pages keep every old `/Personal-Profile-Portfolio/` link and printed QR working | Devin wants the short address; GitHub does not forward project-site URLs after a rename | [project architecture](architecture.md#base-path-and-urls) |
 
 ## Name card
 
@@ -28,6 +29,7 @@ One line per decision that still holds, with where the full reasoning lives. New
 |---|---|---|---|---|
 | N1 | 2026-10-03 | Card web page `/card/` plus a QR to its URL, a vCard 3.0 download, a print layout and a vector QR; no Wallet pass | Works on every phone, editable without reprinting, free, no third party | [card research](../card/01-research.md) |
 | N2 | 2026-10-03 | QR level M, 4-module quiet zone, about 24 mm code on the print card | ISO/IEC 18004 and print guidance | [card reference](../card/reference.md) |
+| N3 | 2026-10-18 | Name card at `/namecard/` (was `/card/`); the QR encodes `https://dvez373.github.io/namecard/`. Old card addresses forward | Devin's choice; shorter URL gives a less dense QR | [card reference](../card/reference.md) |
 
 ## Content and publishing (Devin)
 

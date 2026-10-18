@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Devin Ezekiel Purba's professional profile: a **website** (Astro 7, `website/`), a **CV** (LaTeX, `cv/`) and a **name card** (`website/src/pages/card/`). Public repository; `main` deploys <https://dvez373.github.io/Personal-Profile-Portfolio/>.
+Devin Ezekiel Purba's professional profile: a **website** (Astro 7, `website/`), a **CV** (LaTeX, `cv/`) and a **name card** (`website/src/pages/namecard/`). Public repository; `main` deploys <https://dvez373.github.io/> (repository `DvEz373.github.io`; old `/Personal-Profile-Portfolio/` links forward).
 
 ## Rules that are never negotiable
 
@@ -33,7 +33,7 @@ Devin Ezekiel Purba's professional profile: a **website** (Astro 7, `website/`),
 cd website && npm ci                      # once
 npm run check && npm run build            # types, content schemas, figure metadata; 21 pages
 npx astro preview --port 4321 &           # then:
-npm test                                  # Playwright desktop + phone (95 passed, 5 skipped)
+npm test                                  # Playwright desktop + phone (97 passed, 5 skipped)
 node scripts/shots.mjs <scratch> "home,projects/"   # screenshots; node scripts/measure.mjs for sizes
 cd .. && node scripts/graph.mjs --check   # docs and graph up to date
 ```

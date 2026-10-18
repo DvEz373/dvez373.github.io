@@ -22,9 +22,9 @@ Astro 7 static site with TypeScript. Every page is pre-rendered at build time; t
 | `/about/` | `pages/about.astro` | Base (`contact={false}`) | Bio, spec sheet (role, focus tags), contact list |
 | `/404.html` | `pages/404.astro` | Base | |
 | `/og-card/` | `pages/og-card.astro` | none | 1200 × 630 source for `public/og.jpg`; not in the sitemap |
-| `/card/` | `pages/card/index.astro` | Bare | Name card, see [card reference](../card/reference.md) |
-| `/card/print/` | `pages/card/print.astro` | Bare | Print layout; not in the sitemap |
-| `/card-qr.svg` | `pages/card-qr.svg.ts` | endpoint | Vector QR of the card URL |
+| `/namecard/` | `pages/namecard/index.astro` | Bare | Name card, see [card reference](../card/reference.md) |
+| `/namecard/print/` | `pages/namecard/print.astro` | Bare | Print layout; not in the sitemap |
+| `/namecard-qr.svg` | `pages/namecard-qr.svg.ts` | endpoint | Vector QR of the card URL |
 | `/devin-ezekiel-purba.vcf` | `pages/devin-ezekiel-purba.vcf.ts` | endpoint | vCard 3.0 from `profile.yaml` |
 
 `public/` adds `favicon.svg`, `og.jpg` and, on `main` builds only, `cv.pdf`.
@@ -80,7 +80,7 @@ All run on `astro:page-load`, so they work after client-side navigation, and the
 
 ## Build configuration
 
-- `astro.config.mjs`: `site` and `base` from `SITE_URL` / `SITE_BASE`; prefetch on hover; sitemap without `/og-card` and `/card/print`; Geist variable font (upright and italic) self-hosted from `@fontsource-variable/geist`.
+- `astro.config.mjs`: `site` and `base` from `SITE_URL` / `SITE_BASE`; prefetch on hover; sitemap without `/og-card` and `/namecard/print`; base `/` (user site); Geist variable font (upright and italic) self-hosted from `@fontsource-variable/geist`.
 - `tsconfig.json`: Astro strict.
 - Dependencies: `astro`, `@astrojs/sitemap`, `@fontsource-variable/geist`, `qrcode`. Dev: `@astrojs/check`, `@playwright/test`, `@axe-core/playwright`, `typescript`.
 

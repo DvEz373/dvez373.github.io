@@ -1,6 +1,6 @@
 /**
  * Builds a link that works under the site's base path
- * (for example /Personal-Profile-Portfolio/ on GitHub Pages).
+ * ("/" on the user site; a project site would use "/<repository>/").
  */
 export function url(path = ""): string {
   const base = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;

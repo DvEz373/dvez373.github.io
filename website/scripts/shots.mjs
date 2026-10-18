@@ -7,9 +7,9 @@
 import { chromium } from "@playwright/test";
 import { mkdirSync } from "node:fs";
 
-const base = "http://localhost:4321/Personal-Profile-Portfolio/";
+const base = "http://localhost:4321/";
 const out = process.argv[2] ?? "shots";
-const pages = (process.argv[3] ?? "home,experience/,education/,projects/,skills/,about/,card/").split(",");
+const pages = (process.argv[3] ?? "home,experience/,education/,projects/,skills/,about/,namecard/").split(",");
 const variants = [
   { tag: "desktop-light", viewport: { width: 1440, height: 900 }, colorScheme: "light" },
   { tag: "desktop-dark", viewport: { width: 1440, height: 900 }, colorScheme: "dark" },

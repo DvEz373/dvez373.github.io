@@ -11,9 +11,9 @@ One repository, one person, three products. Together they make Devin Ezekiel Pur
 
 | Product | What a visitor gets | Source | Output |
 |---|---|---|---|
-| **Website** | Portfolio: home, experience, education, projects (8 client case studies, 3 academic), skills, about | `website/` (Astro 7, TypeScript) | Static site on GitHub Pages: <https://dvez373.github.io/Personal-Profile-Portfolio/> |
+| **Website** | Portfolio: home, experience, education, projects (8 client case studies, 3 academic), skills, about | `website/` (Astro 7, TypeScript) | Static site on GitHub Pages: <https://dvez373.github.io/> |
 | **CV** | ATS-friendly two-page CV, personal-email and work-email variants | `cv/` (LaTeX) | `cv.pdf` on the website ("Download CV"); both variants as CI artifacts |
-| **Name card** | Phone card with save-contact, share and QR; print layout; vector QR; vCard | `website/src/pages/card/`, `card-qr.svg.ts`, `devin-ezekiel-purba.vcf.ts` | `/card/`, `/card/print/`, `/card-qr.svg`, `/devin-ezekiel-purba.vcf` |
+| **Name card** | Phone card with save-contact, share and QR; print layout; vector QR; vCard | `website/src/pages/namecard/`, `namecard-qr.svg.ts`, `devin-ezekiel-purba.vcf.ts` | `/namecard/`, `/namecard/print/`, `/card-qr.svg`, `/devin-ezekiel-purba.vcf` |
 
 The name card is part of the website build. The CV is built separately but is published through the website.
 
@@ -23,7 +23,7 @@ The name card is part of the website build. The CV is built separately but is pu
 
 - **Recruiters and hiring managers**: should understand who Devin is and what he has built within one screen, and be able to download the CV.
 - **Engineering clients and peers**: case studies show real, anonymised power-system work with figures.
-- **In person**: the name card QR opens `/card/`, which saves the contact in one tap.
+- **In person**: the name card QR opens `/namecard/`, which saves the contact in one tap.
 
 ## Status (2026-10-14)
 

@@ -12,7 +12,7 @@ Reference docs: [architecture](../docs/website/architecture.md), [content model]
    npm install
    npm run dev
    ```
-3. Open <http://localhost:4321/Personal-Profile-Portfolio/>. Pages reload as you edit.
+3. Open <http://localhost:4321/>. Pages reload as you edit.
 
 ## Edit the content
 
@@ -88,6 +88,6 @@ The **Website** GitHub Actions workflow builds and tests every pull request that
 1. Make the repository public, or use GitHub Pro. The published site is public either way.
 2. **Settings → Pages → Source: GitHub Actions**.
 3. **Settings → Secrets and variables → Actions → Variables**: add `PAGES_ENABLED` = `true`.
-4. Re-run the latest **Website** workflow on `main`. The site appears at <https://dvez373.github.io/Personal-Profile-Portfolio/>.
+4. Re-run the latest **Website** workflow on `main`. The site appears at <https://dvez373.github.io/>, because the repository is named `DvEz373.github.io` (a GitHub Pages user site).
 
-For a custom domain or a `<username>.github.io` repository, build with `SITE_URL=https://your.domain SITE_BASE=/`.
+For a custom domain, build with `SITE_URL=https://your.domain`. As a project site (any other repository name) it would also need `SITE_BASE=/<repository>`. `npm run build` also writes forwarding pages for the old `/Personal-Profile-Portfolio/` and `/card/` addresses (`scripts/legacy-paths.mjs`).
