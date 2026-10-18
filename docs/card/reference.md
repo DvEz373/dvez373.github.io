@@ -2,7 +2,7 @@
 title: Name card reference
 aliases: [Name card reference]
 type: reference
-covers: [website/src/pages/card/, website/src/pages/card-qr.svg.ts, website/src/pages/devin-ezekiel-purba.vcf.ts, website/src/lib/qr.ts, website/src/layouts/Bare.astro]
+covers: [website/src/pages/namecard/, website/src/pages/namecard-qr.svg.ts, website/src/pages/devin-ezekiel-purba.vcf.ts, website/src/lib/qr.ts, website/src/layouts/Bare.astro]
 ---
 
 # Name card reference
@@ -13,9 +13,9 @@ The name card is part of the website build. Research and the options compared: [
 
 | URL | Source | What |
 |---|---|---|
-| `/card/` | `website/src/pages/card/index.astro` (layout `Bare`) | Phone-first card: photo, name, role and employer, **Save contact** (.vcf), Email, Call, WhatsApp, LinkedIn, Instagram, GitHub, Website; **Share** (Web Share API, falls back to "Copy link"); **Show QR** (full-screen `<dialog>` for scanning in person) |
-| `/card/print/` | `website/src/pages/card/print.astro` | Front and back, each 91 × 61 mm (85 × 55 mm card plus 3 mm bleed, text 4 mm inside the trim). `noindex`, not in the sitemap |
-| `/card-qr.svg` | `website/src/pages/card-qr.svg.ts` | Vector QR for print shops, email signatures and slides |
+| `/namecard/` | `website/src/pages/namecard/index.astro` (layout `Bare`) | Phone-first card: photo, name, role and employer, **Save contact** (.vcf), Email, Call, WhatsApp, LinkedIn, Instagram, GitHub, Website; **Share** (Web Share API, falls back to "Copy link"); **Show QR** (full-screen `<dialog>` for scanning in person) |
+| `/namecard/print/` | `website/src/pages/namecard/print.astro` | Front and back, each 91 × 61 mm (85 × 55 mm card plus 3 mm bleed, text 4 mm inside the trim). `noindex`, not in the sitemap |
+| `/namecard-qr.svg` | `website/src/pages/namecard-qr.svg.ts` | Vector QR for print shops, email signatures and slides |
 | `/devin-ezekiel-purba.vcf` | `website/src/pages/devin-ezekiel-purba.vcf.ts` | vCard 3.0: name, title (`role`), org, email, mobile, city and country, website, LinkedIn, GitHub, Instagram, note |
 
 Linked from the footer, the About page and the command palette.
@@ -27,13 +27,14 @@ Everything comes from `website/src/data/profile.yaml` (`name`, `givenNames`, `fa
 ## QR
 
 - Built at build time by `website/src/lib/qr.ts` with the `qrcode` package.
-- Encodes the `/card/` URL (`cardUrl(site)`), so card details can change without reprinting.
+- Encodes the `/namecard/` URL (`cardUrl(site)`, today `https://dvez373.github.io/namecard/`), so card details can change without reprinting.
+- Cards printed before 2026-10-18 encode `https://dvez373.github.io/Personal-Profile-Portfolio/card/`. That address forwards to `/namecard/` (`scripts/legacy-paths.mjs`, checked by a test), so old cards keep working; reprint only when convenient.
 - Error correction M, 4-module quiet zone (ISO/IEC 18004). On the print card the QR is 30 mm including the quiet zone (about 24 mm code), above the 2 to 2.5 cm guidance.
 - Dark `#12161c` on white. No logo overlay.
 
 ## Printing
 
-1. Open `/card/print/`, press Print or Save as PDF.
+1. Open `/namecard/print/`, press Print or Save as PDF.
 2. Margins None, scale 100 %, background graphics on: a 2-page PDF (front, back).
 3. Send as "85 × 55 mm, 3 mm bleed included".
 4. Test-scan a printed proof on iPhone and Android.

@@ -21,13 +21,13 @@ flowchart LR
   subgraph pages
     n14["404.astro"]:::code
     n15["about.astro"]:::code
-    n16["card-qr.svg.ts"]:::code
-    n17["card/index.astro"]:::code
-    n18["card/print.astro"]:::code
-    n19["devin-ezekiel-purba.vcf.ts"]:::code
-    n20["education.astro"]:::code
-    n21["experience.astro"]:::code
-    n22["index.astro"]:::code
+    n16["devin-ezekiel-purba.vcf.ts"]:::code
+    n17["education.astro"]:::code
+    n18["experience.astro"]:::code
+    n19["index.astro"]:::code
+    n20["namecard-qr.svg.ts"]:::code
+    n21["namecard/index.astro"]:::code
+    n22["namecard/print.astro"]:::code
     n23["og-card.astro"]:::code
     n24["projects/[slug].astro"]:::code
     n25["projects/index.astro"]:::code
@@ -125,41 +125,41 @@ flowchart LR
   n15 --> n44
   n15 --> n49
   n15 --> n53
-  n16 --> n46
-  n17 --> n33
+  n16 --> n43
+  n16 --> n49
+  n17 --> n35
   n17 --> n36
-  n17 --> n27
+  n17 --> n41
+  n17 --> n42
+  n17 --> n28
   n17 --> n43
-  n17 --> n46
-  n17 --> n49
-  n18 --> n27
+  n17 --> n44
+  n18 --> n31
+  n18 --> n35
+  n18 --> n41
+  n18 --> n42
+  n18 --> n28
   n18 --> n43
-  n18 --> n46
+  n18 --> n44
+  n19 --> n33
+  n19 --> n34
+  n19 --> n36
+  n19 --> n38
+  n19 --> n40
+  n19 --> n41
+  n19 --> n28
   n19 --> n43
   n19 --> n49
-  n20 --> n35
-  n20 --> n36
-  n20 --> n41
-  n20 --> n42
-  n20 --> n28
-  n20 --> n43
-  n20 --> n44
-  n21 --> n31
-  n21 --> n35
-  n21 --> n41
-  n21 --> n42
-  n21 --> n28
+  n20 --> n46
+  n21 --> n33
+  n21 --> n36
+  n21 --> n27
   n21 --> n43
-  n21 --> n44
-  n22 --> n33
-  n22 --> n34
-  n22 --> n36
-  n22 --> n38
-  n22 --> n40
-  n22 --> n41
-  n22 --> n28
+  n21 --> n46
+  n21 --> n49
+  n22 --> n27
   n22 --> n43
-  n22 --> n49
+  n22 --> n46
   n23 --> n43
   n23 --> n54
   n24 --> n33
@@ -186,10 +186,10 @@ flowchart LR
   n27 -.-> n55
   n28 -.-> n55
   n15 -.-> n55
+  n16 -.-> n55
   n17 -.-> n55
   n18 -.-> n55
   n19 -.-> n55
-  n20 -.-> n55
   n21 -.-> n55
   n22 -.-> n55
   n23 -.-> n55

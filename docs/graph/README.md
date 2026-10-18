@@ -36,10 +36,10 @@ grep '"website/src/lib/url.ts"' docs/graph/graph.json   # raw lines, one node or
 | `page` | 11 |
 | `rule` | 10 |
 | `latex` | 8 |
+| `tool` | 7 |
 | `lib` | 7 |
 | `config` | 6 |
 | `collection` | 6 |
-| `tool` | 6 |
 | `package` | 5 |
 | `data` | 5 |
 | `output` | 4 |
@@ -57,8 +57,8 @@ grep '"website/src/lib/url.ts"' docs/graph/graph.json   # raw lines, one node or
 | Edge type | Count | Meaning |
 |---|---|---|
 | `imports` | 127 | Code import (file or npm package) |
-| `links` | 123 | Doc links to a file or folder |
-| `documents` | 75 | Doc explains a file or folder (front matter covers) |
+| `links` | 124 | Doc links to a file or folder |
+| `documents` | 76 | Doc explains a file or folder (front matter covers) |
 | `built_from` | 31 | Output made from a source |
 | `affects` | 26 | Decision shaped a path |
 | `governs` | 26 | Rule applies to a path |
@@ -77,7 +77,7 @@ grep '"website/src/lib/url.ts"' docs/graph/graph.json   # raw lines, one node or
 
 ## Coverage
 
-83 of 83 code, data, config and CI files are explained by a reference doc (front matter `covers`). `--check` fails on any file that is not.
+84 of 84 code, data, config and CI files are explained by a reference doc (front matter `covers`). `--check` fails on any file that is not.
 
 ## Products and outputs
 
@@ -175,7 +175,7 @@ File by file: [modules.md](modules.md) (large). In Obsidian, [portfolio.canvas](
 
 | Doc | Type | Covers |
 |---|---|---|
-| [docs/card/reference.md](../card/reference.md) | reference | `website/src/layouts/Bare.astro`, `website/src/lib/qr.ts`, `website/src/pages/card-qr.svg.ts`, `website/src/pages/card/`, `website/src/pages/devin-ezekiel-purba.vcf.ts` |
+| [docs/card/reference.md](../card/reference.md) | reference | `website/src/layouts/Bare.astro`, `website/src/lib/qr.ts`, `website/src/pages/devin-ezekiel-purba.vcf.ts`, `website/src/pages/namecard-qr.svg.ts`, `website/src/pages/namecard/` |
 | [docs/cv/reference.md](../cv/reference.md) | reference | `.github/workflows/build-cv.yml`, `cv/` |
 | [docs/graph/modules.md](modules.md) | index |  |
 | [docs/graph/README.md](README.md) | index | `docs/graph/curated.mjs`, `scripts/graph.mjs` |
@@ -192,7 +192,7 @@ File by file: [modules.md](modules.md) (large). In Obsidian, [portfolio.canvas](
 | [docs/website/architecture.md](../website/architecture.md) | reference | `website/astro.config.mjs`, `website/src/components/`, `website/src/layouts/`, `website/src/lib/`, `website/src/pages/`, `website/src/scripts/`, `website/src/styles/global.css`, `website/tsconfig.json` |
 | [docs/website/content-model.md](../website/content-model.md) | reference | `website/src/content.config.ts`, `website/src/content/projects/`, `website/src/data/`, `website/src/lib/content.ts`, `website/src/lib/glossary.ts`, `website/src/lib/themes.ts` |
 | [docs/website/design-system.md](../website/design-system.md) | reference | `website/astro.config.mjs`, `website/src/lib/themes.ts`, `website/src/lib/transitions.ts`, `website/src/styles/global.css` |
-| [docs/website/quality.md](../website/quality.md) | reference | `.github/workflows/website.yml`, `website/playwright.config.ts`, `website/scripts/figures.mjs`, `website/scripts/make-og.mjs`, `website/scripts/measure.mjs`, `website/scripts/shots.mjs`, `website/tests/site.spec.ts` |
+| [docs/website/quality.md](../website/quality.md) | reference | `.github/workflows/website.yml`, `website/playwright.config.ts`, `website/scripts/figures.mjs`, `website/scripts/legacy-paths.mjs`, `website/scripts/make-og.mjs`, `website/scripts/measure.mjs`, `website/scripts/shots.mjs`, `website/tests/site.spec.ts` |
 
 ## Facts kept in two places
 

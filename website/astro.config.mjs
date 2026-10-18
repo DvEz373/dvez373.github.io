@@ -2,10 +2,10 @@
 import { defineConfig, fontProviders } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
-// Published as a GitHub Pages project site: https://dvez373.github.io/Personal-Profile-Portfolio/
-// For a custom domain or a <user>.github.io repository, build with SITE_URL=<url> SITE_BASE=/
+// Published as the GitHub Pages user site https://dvez373.github.io/ (repository DvEz373.github.io).
+// For a custom domain, build with SITE_URL=<url>; for a project site, also set SITE_BASE=/<repository>.
 const site = process.env.SITE_URL ?? "https://dvez373.github.io";
-const base = process.env.SITE_BASE ?? "/Personal-Profile-Portfolio";
+const base = process.env.SITE_BASE ?? "/";
 
 // Fonts are self-hosted: Astro copies these files from node_modules into the build.
 // No font is requested from a CDN, at build time or in the browser.
@@ -18,7 +18,7 @@ export default defineConfig({
   base,
   trailingSlash: "ignore",
   prefetch: { prefetchAll: true, defaultStrategy: "hover" },
-  integrations: [sitemap({ filter: (page) => !page.includes("/og-card") && !page.includes("/card/print") })],
+  integrations: [sitemap({ filter: (page) => !page.includes("/og-card") && !page.includes("/namecard/print") })],
   // One typeface for the whole site (Geist, upright + italic); hierarchy comes from weight, size and colour.
   fonts: [
     {

@@ -59,7 +59,7 @@ Rules for the CV copy: two pages, STAR bullets, approximate ratings, no location
 |---|---|---|---|
 | `website/public/og.jpg` (link preview) | `/og-card/` page, which reads `profile.yaml` and the portrait | Name, headline, tagline or portrait changes | `node website/scripts/make-og.mjs` against a running preview ([runbooks](runbooks.md)) |
 | `website/public/cv.pdf` | `cv/` | Every deploy (CI does it) | Not committed; built on `main` by the Website workflow |
-| QR codes (`/card/`, `/card/print/`, `/card-qr.svg`) | The site URL in `astro.config.mjs` | Only if the domain or base path changes; then reprint cards | Built at build time by `src/lib/qr.ts` |
+| QR codes (`/namecard/`, `/namecard/print/`, `/namecard-qr.svg`) | The site URL in `astro.config.mjs` | Only if the domain or base path changes; then reprint cards | Built at build time by `src/lib/qr.ts` |
 | `docs/graph/graph.json`, `docs/graph/README.md` | Repository files and `docs/graph/curated.mjs` | After any change to code imports, docs or CI | `node scripts/graph.mjs` |
 | `design/prototype/assets/data.js` | Historical copy of v3 data | Never; history only | none |
 

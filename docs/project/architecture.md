@@ -64,7 +64,7 @@ flowchart TB
 
 ## Base path and URLs
 
-The site is a GitHub Pages project site, so every URL lives under `/Personal-Profile-Portfolio/`. `astro.config.mjs` reads `SITE_URL` and `SITE_BASE` (defaults: `https://dvez373.github.io`, `/Personal-Profile-Portfolio`). In code, always build links with `url()` from `src/lib/url.ts`, never with a hard-coded `/`. A custom domain needs `SITE_BASE=/` and a reprint of the name card, because the QR encodes the full URL.
+Since 2026-10-18 the site is a GitHub Pages user site: the repository is named `DvEz373.github.io` and the site lives at the root, <https://dvez373.github.io/> (decision A9). `astro.config.mjs` reads `SITE_URL` and `SITE_BASE` (defaults: `https://dvez373.github.io`, `/`). In code, always build links with `url()` from `src/lib/url.ts`, never with a hard-coded `/`, so the base can change again. After `astro build`, `scripts/legacy-paths.mjs` writes a forwarding page for every old address under `/Personal-Profile-Portfolio/` and for `/card/` (now `/namecard/`), and copies the CV, vCard, QR and preview image to their old paths: GitHub does not forward project-site URLs after a rename, and printed cards carry the old QR. A custom domain needs a new `SITE_URL` and a reprint of the name card, because the QR encodes the full URL.
 
 ## Runtime behaviour
 

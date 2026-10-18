@@ -12,7 +12,7 @@ Short, tested recipes. Each one lists the files to touch and how to check the re
 ## R-01 Run the website locally
 
 ```bash
-cd website && npm ci && npm run dev        # live reload at http://localhost:4321/Personal-Profile-Portfolio/
+cd website && npm ci && npm run dev        # live reload at http://localhost:4321/
 ```
 
 ## R-02 The gate (before every commit that touches the site)
@@ -22,7 +22,7 @@ cd website
 npm run check                 # astro check (types, content schemas) + figure metadata guard
 npm run build                 # 21 pages expected today
 npx astro preview --port 4321 &   # tests reuse a running preview
-npm test                      # Playwright, desktop and phone (95 passed, 5 skipped today)
+npm test                      # Playwright, desktop and phone (97 passed, 5 skipped today)
 node scripts/shots.mjs <scratch>/shots "home,projects/,projects/<slug>/"   # desktop light/dark + phone
 node scripts/measure.mjs      # no text < 12 px, no target < 24 px, uppercase labels, em dashes
 cd .. && node scripts/graph.mjs --check
@@ -89,11 +89,11 @@ Commit `public/og.jpg`. Delete the leftover `og.png` if `og.jpg` was written.
 
 ## R-10 Print name cards
 
-Open `/card/print/`, then Print → Save as PDF, margins None, scale 100 %, background graphics on. Send as "85 × 55 mm, 3 mm bleed included". Test-scan a proof on iPhone and Android. Details: [card reference](../card/reference.md).
+Open `/namecard/print/`, then Print → Save as PDF, margins None, scale 100 %, background graphics on. Send as "85 × 55 mm, 3 mm bleed included". Test-scan a proof on iPhone and Android. Details: [card reference](../card/reference.md).
 
 ## R-11 Move to a custom domain
 
-Build with `SITE_URL=https://<domain> SITE_BASE=/` (set in `website.yml`), configure Pages, then reprint the cards: the QR encodes the full URL.
+Build with `SITE_URL=https://<domain>` (set in `website.yml`), configure Pages, then reprint the cards: the QR encodes the full URL. Add the current `https://dvez373.github.io/` paths to `scripts/legacy-paths.mjs` so existing links keep working.
 
 ## R-12 Update docs and the knowledge graph
 

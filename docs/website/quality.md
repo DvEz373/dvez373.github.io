@@ -2,7 +2,7 @@
 title: Website quality, tests and scripts
 aliases: [Website quality tests and scripts]
 type: reference
-covers: [website/tests/site.spec.ts, website/playwright.config.ts, website/scripts/figures.mjs, website/scripts/shots.mjs, website/scripts/measure.mjs, website/scripts/make-og.mjs, .github/workflows/website.yml]
+covers: [website/tests/site.spec.ts, website/scripts/legacy-paths.mjs, website/playwright.config.ts, website/scripts/figures.mjs, website/scripts/shots.mjs, website/scripts/measure.mjs, website/scripts/make-og.mjs, .github/workflows/website.yml]
 ---
 
 # Website quality, tests and scripts
@@ -51,10 +51,11 @@ Two projects: `desktop` (1280 × 900) and `mobile` (Pixel 7). CI retries once.
 | Home features four client case studies | `featured` and `order` |
 | Instrument trips, reports a nadir, settles | Demo behaviour; reduced-motion variant |
 | Contact card is a valid vCard | `/devin-ezekiel-purba.vcf` fields |
+| Old links forward to the new pages | `/Personal-Profile-Portfolio/...` (including the printed QR address `/card/`), `/card/` on the new site, a `#fragment`, and the old vCard file (move to the user site, 2026-10-18) |
 | Unknown pages show the 404 page | |
 | Name card links and scannable QR | Contact links, WhatsApp URL, QR dialog, SVG download |
 
-Last result: 95 passed, 5 skipped (the skips are the device-specific tests on the other project).
+Last result: 97 passed, 5 skipped (the skips are the device-specific tests on the other project).
 
 ## Scripts (`website/scripts/`)
 
@@ -63,6 +64,7 @@ Last result: 95 passed, 5 skipped (the skips are the device-specific tests on th
 | `figures.mjs [--fix]` | Fails if a PNG in `src/assets/projects/` carries metadata chunks (draw.io embeds its editable source) or if an SVG figure exists; `--fix` keeps image chunks only | nothing |
 | `shots.mjs <dir> [pages]` | Full-page screenshots: desktop light, desktop dark, phone; reports overflow and page errors | running preview |
 | `measure.mjs [pages]` | At 390 px: text under 12 px, targets under 24 × 24 px, uppercase labels, em dashes. Default pages include the name card since 2026-10-16 | running preview |
+| `legacy-paths.mjs` | Runs after `astro build` (part of `npm run build`): forwarding pages for every old `/Personal-Profile-Portfolio/` and `/card/` address, and copies of the CV, vCard, QR and preview image at their old paths. Skips itself if `SITE_BASE` is not `/` | `dist/` |
 | `make-og.mjs` | Screenshots `/og-card/` to `public/og.png` (and `og.jpg` with Pillow) | running preview |
 
 Pages for `shots.mjs` and `measure.mjs` are comma-separated paths; use `home` for the home page.

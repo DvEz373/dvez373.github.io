@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 // Tests run against the production build served by `astro preview`.
-const base = process.env.SITE_BASE ?? "/Personal-Profile-Portfolio";
+const base = (process.env.SITE_BASE ?? "").replace(/\/+$/, "");
 const port = 4321;
 
 export default defineConfig({
