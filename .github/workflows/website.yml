@@ -65,8 +65,10 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        # From the repository root: the Vercel project's Root Directory is website/.
+        working-directory: .
         run: |
           mkdir -p .vercel/output
-          cp -r dist .vercel/output/static
+          cp -r website/dist .vercel/output/static
           echo '{"version":3,"routes":[{"handle":"filesystem"},{"src":"/.*","status":404,"dest":"/404.html"}]}' > .vercel/output/config.json
           npx --yes vercel@63.1.2 deploy --prebuilt --prod --token "$VERCEL_TOKEN"
