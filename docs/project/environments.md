@@ -29,3 +29,4 @@ Two places do the work: Devin's Windows PC and Claude Code cloud sessions (Linux
 - **Large PNGs**: image viewers in agent tools show only part of a very large PNG. Make a scaled copy with `sharp` from `website/node_modules` in a scratch folder, never next to the source.
 - **Stale apt index on CI runners**: run `apt-get update` before `apt-get install` (fixed in `build-cv.yml`).
 - **Squash merges**: after a PR is squash-merged, the branch's commits are not ancestors of `main`. Start new work from `main`; in a cloud session where force-push is blocked, merge `main` into the branch instead of resetting it.
+- **CRLF checkouts** (a PC with `core.autocrlf=true`): since 2026-10-21 `scripts/graph.mjs` normalizes line endings when it reads files, and `website/scripts/legacy-paths.mjs` resolves `dist/` with `fileURLToPath`. Before that, the graph check reported every doc as missing `type` and `covers`, and `npm run build` failed on a `C:\C:\...` path.

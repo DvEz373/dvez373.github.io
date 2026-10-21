@@ -35,7 +35,7 @@ const KEEP_IN_SKIPPED = new Set(["docs/website/research/framework-benchmark/READ
 const EXT = new Set([".base", ".astro", ".ts", ".mjs", ".js", ".css", ".yaml", ".yml", ".md", ".tex", ".sty", ".json", ".png", ".jpg", ".svg"]);
 
 const rel = (abs) => relative(ROOT, abs).split("\\").join("/");
-const read = (p) => readFileSync(join(ROOT, p), "utf8");
+const read = (p) => readFileSync(join(ROOT, p), "utf8").replace(/\r\n/g, "\n"); // CRLF checkouts (git autocrlf) parse the same
 const isDir = (p) => existsSync(join(ROOT, p)) && statSync(join(ROOT, p)).isDirectory();
 const exists = (p) => existsSync(join(ROOT, p.replace(/\/$/, "")));
 

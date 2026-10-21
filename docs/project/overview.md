@@ -12,7 +12,7 @@ One repository, one person, three products. Together they make Devin Ezekiel Pur
 | Product | What a visitor gets | Source | Output |
 |---|---|---|---|
 | **Website** | Portfolio: home, experience, education, projects (8 client case studies, 3 academic), skills, about | `website/` (Astro 7, TypeScript) | Static site on Vercel: <https://dvnezkl.vercel.app/> |
-| **CV** | ATS-friendly two-page CV, personal-email and work-email variants | `cv/` (LaTeX) | `cv.pdf` on the website ("Download CV"); both variants as CI artifacts |
+| **CV** | ATS-friendly two-page CV, personal-email and work-email variants | `cv/` (LaTeX) | `CV_Devin_Ezekiel_Purba.pdf` on the website ("Download CV"; `/cv.pdf` serves a copy for old links); both variants as CI artifacts |
 | **Name card** | Phone card with save-contact, share and QR; print layout; vector QR; vCard | `website/src/pages/namecard/`, `namecard-qr.svg.ts`, `devin-ezekiel-purba.vcf.ts` | `/namecard/`, `/namecard/print/`, `/card-qr.svg`, `/devin-ezekiel-purba.vcf` |
 
 The name card is part of the website build. The CV is built separately but is published through the website.

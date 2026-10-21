@@ -3,15 +3,17 @@
 //
 // The site is plain static files (no host redirect config), so every old page gets a small HTML page that forwards to the
 // new address (meta refresh plus a script that keeps any #fragment, and a visible link). Files that are not
-// pages (CV, contact card, QR, preview image) are copied to their old paths instead.
+// pages (CV, contact card, QR, preview image) are copied to their old paths instead; the CV also keeps its old
+// file name cv.pdf at the root, because the site served it under that name until 2026-10-21.
 // Printed name cards and their QR codes point to /Personal-Profile-Portfolio/card/, so that path must stay.
 import { cpSync, existsSync, mkdirSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { join, relative, sep } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const dist = new URL("../dist/", import.meta.url).pathname;
+const dist = fileURLToPath(new URL("../dist/", import.meta.url)); // not .pathname: that gives /C:/... on Windows
 const OLD_BASE = "Personal-Profile-Portfolio";
 const RENAMED = [["card/", "namecard/"]]; // old route -> new route, longest prefix first
-const FILES = { "cv.pdf": "cv.pdf", "devin-ezekiel-purba.vcf": "devin-ezekiel-purba.vcf", "og.jpg": "og.jpg", "favicon.svg": "favicon.svg", "card-qr.svg": "namecard-qr.svg" };
+const FILES = { "cv.pdf": "CV_Devin_Ezekiel_Purba.pdf", "devin-ezekiel-purba.vcf": "devin-ezekiel-purba.vcf", "og.jpg": "og.jpg", "favicon.svg": "favicon.svg", "card-qr.svg": "namecard-qr.svg" };
 
 const base = process.env.SITE_BASE ?? "/";
 if (base.replace(/\/+$/, "") !== "") {
@@ -70,7 +72,7 @@ for (const route of routes) {
 }
 let files = 0;
 for (const [oldName, newName] of Object.entries(FILES)) {
-  if (!existsSync(join(dist, newName))) continue; // cv.pdf exists only in main builds
+  if (!existsSync(join(dist, newName))) continue; // the CV exists only in main builds
   mkdirSync(join(dist, OLD_BASE), { recursive: true });
   cpSync(join(dist, newName), join(dist, OLD_BASE, oldName));
   if (oldName !== newName) cpSync(join(dist, newName), join(dist, oldName));

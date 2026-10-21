@@ -56,7 +56,7 @@ grep '"website/src/lib/url.ts"' docs/graph/graph.json   # raw lines, one node or
 
 | Edge type | Count | Meaning |
 |---|---|---|
-| `imports` | 127 | Code import (file or npm package) |
+| `imports` | 128 | Code import (file or npm package) |
 | `links` | 124 | Doc links to a file or folder |
 | `documents` | 76 | Doc explains a file or folder (front matter covers) |
 | `built_from` | 31 | Output made from a source |
@@ -92,7 +92,7 @@ flowchart LR
   n0{{"Name card"}}:::prod
   n1{{"CV"}}:::prod
   n2{{"Website"}}:::prod
-  n3(["cv.pdf on the website"]):::out
+  n3(["CV PDF on the website"]):::out
   n4["main.tex"]:::code
   n4 --> n3
   n5["website.yml"]:::code
@@ -145,7 +145,7 @@ flowchart LR
   collections -->|5| data
   collections -->|6| schema
   components -->|4| collections
-  components -->|12| lib
+  components -->|13| lib
   components -->|4| packages
   components -->|3| scripts
   content -->|15| assets

@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      # The "Download CV" button serves the personal-email CV built from cv/.
+      # The "Download CV" button serves the personal-email CV built from cv/, under a file name that says whose CV it is.
       - name: Compile CV
         if: github.event_name != 'pull_request'
         uses: xu-cheng/latex-action@v4
@@ -33,7 +33,7 @@ jobs:
           working_directory: cv
       - name: Add CV to the site
         if: github.event_name != 'pull_request'
-        run: cp ../cv/main.pdf public/cv.pdf
+        run: cp ../cv/main.pdf public/CV_Devin_Ezekiel_Purba.pdf
 
       - uses: actions/setup-node@v7
         with:

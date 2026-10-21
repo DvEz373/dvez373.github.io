@@ -51,6 +51,7 @@ Two projects: `desktop` (1280 × 900) and `mobile` (Pixel 7). CI retries once.
 | Home features four client case studies | `featured` and `order` |
 | Instrument trips, reports a nadir, settles | Demo behaviour; reduced-motion variant |
 | Contact card is a valid vCard | `/devin-ezekiel-purba.vcf` fields |
+| CV download name, and the CV and its old address serve a PDF | Download CV links on Home and About point to `/CV_Devin_Ezekiel_Purba.pdf` with `download`; when the build has the CV (`main` only), that file, `/cv.pdf` and `/Personal-Profile-Portfolio/cv.pdf` return a PDF (2026-10-21) |
 | Old links forward to the new pages | `/Personal-Profile-Portfolio/...` (including the printed QR address `/card/`), `/card/` on the new site, a `#fragment`, and the old vCard file (move to the user site, 2026-10-18) |
 | Unknown pages show the 404 page | |
 | Name card links and scannable QR | Contact links, WhatsApp URL, QR dialog, SVG download |

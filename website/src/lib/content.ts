@@ -32,3 +32,5 @@ export const KIND_LABEL = { degree: "Degree", exchange: "Exchange", courses: "Co
 export { CATEGORY_LABEL, THEMES, TONE, DOMAIN, type Theme } from "./themes";
 export const LEVEL_LABEL = ["", "Aware", "Familiar", "Proficient", "Advanced", "Expert"] as const;
 export const KIND_LABEL_PROJECT = { professional: "Client work", academic: "Academic" } as const;
+/** File name of the CV in public/ (copied there by website.yml on main). The old address /cv.pdf gets a copy from scripts/legacy-paths.mjs. */
+export const CV_FILE = "CV_Devin_Ezekiel_Purba.pdf";

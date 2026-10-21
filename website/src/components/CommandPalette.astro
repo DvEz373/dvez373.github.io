@@ -1,7 +1,7 @@
 ---
 import Icon from "./Icon.astro";
 import { url } from "../lib/url";
-import { getProfile, getExperience, getEducation, getProjects } from "../lib/content";
+import { getProfile, getExperience, getEducation, getProjects, CV_FILE } from "../lib/content";
 
 const profile = await getProfile();
 const [experience, education, projects] = await Promise.all([getExperience(), getEducation(), getProjects()]);
@@ -20,7 +20,7 @@ const items: Item[] = [
   ...education.map((e) => ({ id: `ed-${e.id}`, group: "Education", title: e.title, hint: e.place, href: url(`education/#${e.id}`) })),
   { id: "a-email", group: "Actions", title: "Copy email address", hint: profile.email, action: "copy-email", keywords: "mail contact" },
   { id: "a-call", group: "Actions", title: "Call", hint: profile.phone, href: `tel:${profile.phone.replace(/\s/g, "")}`, keywords: "phone whatsapp contact" },
-  { id: "a-cv", group: "Actions", title: "Download CV (PDF)", href: url("cv.pdf"), download: "CV_Devin_Ezekiel_Purba.pdf", keywords: "resume curriculum vitae" },
+  { id: "a-cv", group: "Actions", title: "Download CV (PDF)", href: url(CV_FILE), download: CV_FILE, keywords: "resume curriculum vitae" },
   { id: "a-vcf", group: "Actions", title: "Save contact card", hint: ".vcf", href: url("devin-ezekiel-purba.vcf"), download: "devin-ezekiel-purba.vcf", keywords: "vcard address book" },
   { id: "a-theme", group: "Actions", title: "Switch light / dark theme", action: "toggle-theme", keywords: "dark mode light mode appearance" },
   { id: "l-li", group: "Links", title: "LinkedIn", href: profile.links.linkedin, external: true },

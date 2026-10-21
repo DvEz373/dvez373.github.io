@@ -1,6 +1,7 @@
 ---
 import Icon from "./Icon.astro";
 import { url } from "../lib/url";
+import { CV_FILE } from "../lib/content";
 import { BUILD_DATE } from "../lib/dates";
 import type { CollectionEntry } from "astro:content";
 
@@ -49,7 +50,7 @@ const updated = BUILD_DATE.toLocaleDateString("en-GB", { day: "2-digit", month: 
       <div>
         <p class="label">Documents</p>
         <ul>
-          <li><a href={url("cv.pdf")} download="CV_Devin_Ezekiel_Purba.pdf">Curriculum vitae (PDF)</a></li>
+          <li><a href={url(CV_FILE)} download>Curriculum vitae (PDF)</a></li>
           <li><a href={url("devin-ezekiel-purba.vcf")} download>Contact card (.vcf)</a></li>
           <li><a href={url("namecard/")}>Name card &amp; QR</a></li>
         </ul>
