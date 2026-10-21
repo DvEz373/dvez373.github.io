@@ -7,7 +7,7 @@ covers: [cv/, .github/workflows/build-cv.yml]
 
 # CV reference
 
-ATS-friendly two-page CV in LaTeX. It is published as `cv.pdf` on the website and built in CI in two variants.
+ATS-friendly two-page CV in LaTeX. It is published on the website as `CV_Devin_Ezekiel_Purba.pdf` (the old address `/cv.pdf` serves a copy) and built in CI in two variants.
 
 ## Files
 
@@ -26,7 +26,7 @@ ATS-friendly two-page CV in LaTeX. It is published as `cv.pdf` on the website an
 
 | Variant | Command (in `cv/`) | Output | Used for |
 |---|---|---|---|
-| Personal email | `latexmk -pdf main.tex` | `main.pdf` | Website "Download CV" (`public/cv.pdf`, built by `website.yml` on `main`) |
+| Personal email | `latexmk -pdf main.tex` | `main.pdf` | Website "Download CV" (`public/CV_Devin_Ezekiel_Purba.pdf`, built by `website.yml` on `main`; `/cv.pdf` keeps a copy for old links) |
 | Work email | `latexmk -pdf -jobname=main-work "-usepretex=\def\UseWorkEmail{}" main.tex` | `main-work.pdf` | Sharing from the work account |
 
 Without `latexmk`, run `pdflatex` twice. PDFs and LaTeX aux files are ignored by git (`.gitignore`).

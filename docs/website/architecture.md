@@ -27,7 +27,7 @@ Astro 7 static site with TypeScript. Every page is pre-rendered at build time; t
 | `/namecard-qr.svg` | `pages/namecard-qr.svg.ts` | endpoint | Vector QR of the card URL |
 | `/devin-ezekiel-purba.vcf` | `pages/devin-ezekiel-purba.vcf.ts` | endpoint | vCard 3.0 from `profile.yaml` |
 
-`public/` adds `favicon.svg`, `og.jpg` and, on `main` builds only, `cv.pdf`.
+`public/` adds `favicon.svg`, `og.jpg` and, on `main` builds only, the CV as `CV_Devin_Ezekiel_Purba.pdf` (`scripts/legacy-paths.mjs` copies it to `/cv.pdf` for old links; the file name comes from `CV_FILE` in `src/lib/content.ts`).
 
 ## Layouts
 

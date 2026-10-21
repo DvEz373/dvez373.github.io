@@ -15,7 +15,7 @@ export const products = [
 
 /** Things the build produces or the world sees. "from" lists what each one is made from. */
 export const outputs = [
-  { id: "output:cv-pdf", label: "cv.pdf on the website", summary: "Personal-email CV, compiled on main by website.yml into public/cv.pdf", from: ["cv/main.tex", ".github/workflows/website.yml"] },
+  { id: "output:cv-pdf", label: "CV PDF on the website", summary: "Personal-email CV, compiled on main by website.yml into public/CV_Devin_Ezekiel_Purba.pdf; legacy-paths.mjs copies it to /cv.pdf for old links", from: ["cv/main.tex", ".github/workflows/website.yml"] },
   { id: "output:cv-artifacts", label: "CV PDF artifacts", summary: "main.pdf and main-work.pdf from build-cv.yml, after an ATS text check", from: ["cv/main.tex", ".github/workflows/build-cv.yml"] },
   { id: "output:og-image", label: "Link preview image", summary: "website/public/og.jpg, rendered from /og-card/ by make-og.mjs; regenerate by hand", from: ["route:/og-card/", "website/scripts/make-og.mjs"] },
   { id: "output:pages-site", label: "Public site on Vercel", summary: "website/dist deployed from main when VERCEL_ENABLED is true", from: [".github/workflows/website.yml", "website/astro.config.mjs"] },

@@ -48,6 +48,7 @@ One line per decision that still holds, with where the full reasoning lives. New
 | D9 | 2026-10-14 | Home status line lists the fields Devin keeps learning across (`focus`), not the job title and employer | [work log](../website/03-work-log.md) 2026-10-14 |
 | D10 | 2026-10-14 | CV: STAR bullets; grid codes and operators in general terms; no locations anywhere (market operator and grid-code names removed) | work log 2026-10-14 |
 | D11 | 2026-10-14 | Years of client work are not important for now (all 2025 to now); Devin will ask for changes | work log 2026-10-14 |
+| D12 | 2026-10-21 | The CV is served as `CV_Devin_Ezekiel_Purba.pdf`, so a download, a save from the PDF viewer and a shared link all carry the name; `/cv.pdf` stays as a copy for old links | work log 2026-10-21 |
 
 ## Design revision (v5, all done)
 

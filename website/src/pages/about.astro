@@ -5,7 +5,7 @@ import Photo from "../components/Photo.astro";
 import Icon from "../components/Icon.astro";
 import portrait from "../assets/photos/portrait.jpg";
 import graduation from "../assets/photos/graduation.jpg";
-import { getProfile, getEducation } from "../lib/content";
+import { getProfile, getEducation, CV_FILE } from "../lib/content";
 import { formatMonth } from "../lib/dates";
 import { url } from "../lib/url";
 
@@ -101,7 +101,7 @@ const tel = profile.phone.replace(/\s/g, "");
           </li>
         </ul>
         <div class="docs">
-          <a class="btn primary" href={url("cv.pdf")} download="CV_Devin_Ezekiel_Purba.pdf"><Icon name="download" />Download CV</a>
+          <a class="btn primary" href={url(CV_FILE)} download><Icon name="download" />Download CV</a>
           <a class="btn" href={url("devin-ezekiel-purba.vcf")} download><Icon name="vcard" />Save contact (.vcf)</a>
           <a class="btn" href={url("namecard/")}><Icon name="qr" />Name card &amp; QR</a>
         </div>

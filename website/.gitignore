@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .astro/
+public/CV_Devin_Ezekiel_Purba.pdf
 public/cv.pdf
 test-results/
 playwright-report/

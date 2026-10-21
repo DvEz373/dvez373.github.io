@@ -240,6 +240,27 @@ test("contact card is a valid vCard", async ({ request }) => {
   expect(body.trimEnd().endsWith("END:VCARD")).toBe(true);
 });
 
+test("the CV downloads under a file name that says whose it is", async ({ page }) => {
+  // A file called cv.pdf says nothing in a downloads folder (asked by Devin, 2026-10-21). The address carries the name,
+  // so saving from the PDF viewer or sharing the link gives the same file name as the Download button.
+  for (const path of ["", "about/"]) {
+    await page.goto(path);
+    const link = page.getByRole("link", { name: "Download CV" }).first();
+    await expect(link, `/${path}`).toHaveAttribute("href", /\/CV_Devin_Ezekiel_Purba\.pdf$/);
+    await expect(link, `/${path}`).toHaveAttribute("download", "");
+  }
+});
+
+test("the CV and its old address serve a PDF", async ({ request }) => {
+  const cv = await request.get("CV_Devin_Ezekiel_Purba.pdf");
+  test.skip(cv.status() !== 200, "the CV is compiled on main builds only");
+  for (const path of ["CV_Devin_Ezekiel_Purba.pdf", "cv.pdf", "Personal-Profile-Portfolio/cv.pdf"]) {
+    const res = await request.get(path);
+    expect(res.status(), path).toBe(200);
+    expect((await res.body()).subarray(0, 5).toString(), path).toBe("%PDF-");
+  }
+});
+
 test("pages fit a 320 px phone without sideways scroll", async ({ page }, info) => {
   test.skip(info.project.name !== "mobile", "phone widths only");
   // The name card once grew to its longest contact row (bug found 2026-10-14).

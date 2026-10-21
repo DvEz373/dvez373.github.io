@@ -83,7 +83,7 @@ node scripts/make-og.mjs               # terminal 2
 
 ## Publishing
 
-The **Website** GitHub Actions workflow builds and tests every pull request that touches `website/`. On `main` it also compiles the CV into `cv.pdf` for the download button and deploys the tested `dist/` to Vercel as prebuilt static output (Vercel does not rebuild, because it cannot compile LaTeX). It deploys only after Vercel is set up:
+The **Website** GitHub Actions workflow builds and tests every pull request that touches `website/`. On `main` it also compiles the CV into `CV_Devin_Ezekiel_Purba.pdf` for the download button and deploys the tested `dist/` to Vercel as prebuilt static output (Vercel does not rebuild, because it cannot compile LaTeX). It deploys only after Vercel is set up:
 
 1. On <https://vercel.com>, create a project named `dvnezkl` (Add New → Project; any template, or `vercel link` in `website/`). The project name gives the address <https://dvnezkl.vercel.app/>. Turn off its Git integration builds (Settings → Git → Ignored Build Step: "Don't build anything"), so only the workflow deploys.
 2. Create a token: Account Settings → Tokens.
