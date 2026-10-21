@@ -56,7 +56,7 @@ flowchart TB
 
 | Workflow | Triggers | Does |
 |---|---|---|
-| `website.yml` | Push to `main` touching `website/**`, `cv/**` or the workflow; PRs touching `website/**`; manual | On `main`: compiles the CV into `public/cv.pdf`. Always: `npm ci`, `npm run check` (types, content, figure metadata), `npm run build`, Playwright tests. On `main` with `VERCEL_ENABLED=true`: deploys `website/dist` to Vercel as prebuilt static output |
+| `website.yml` | Push to `main` touching `website/**`, `cv/**` or the workflow; PRs touching `website/**`; manual | On `main`: compiles the CV into `public/cv.pdf`. Always: `npm ci`, `npm run check` (types, content, figure metadata), `npm run build`, Playwright tests. On `main` with `VERCEL_ENABLED=true`: deploys `website/dist` to Vercel as prebuilt static output. On `main`: publishes forwarding pages to GitHub Pages (`dvnezkl.github.io`), which send every path to Vercel |
 | `build-cv.yml` | Push touching `cv/**` or the workflow; PRs touching `cv/**`; manual | Builds both CV variants, checks that an ATS can extract key words and the email, uploads the PDFs |
 | `docs.yml` | Push and PRs touching docs, `CLAUDE.md`, `README.md`, `scripts/`, `website/src/`, `cv/` or workflows | Fails if the knowledge graph is stale or a doc link or `covers:` path is broken |
 
