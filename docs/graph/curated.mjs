@@ -9,7 +9,7 @@
 export const products = [
   { id: "product:card", label: "Name card", summary: "Phone card, print card, QR and vCard; built with the website", paths: ["website/src/pages/namecard/", "website/src/pages/namecard-qr.svg.ts", "website/src/pages/devin-ezekiel-purba.vcf.ts", "website/src/lib/qr.ts", "website/src/layouts/Bare.astro", "docs/card/"] },
   { id: "product:cv", label: "CV", summary: "Two-page ATS-friendly LaTeX CV, personal and work variants", paths: ["cv/", ".github/workflows/build-cv.yml", "docs/cv/"] },
-  { id: "product:website", label: "Website", summary: "Astro 7 portfolio on GitHub Pages", paths: ["website/", ".github/workflows/website.yml", "docs/website/", "design/"] },
+  { id: "product:website", label: "Website", summary: "Astro 7 portfolio on Vercel", paths: ["website/", ".github/workflows/website.yml", "docs/website/", "design/"] },
   { id: "product:project", label: "Project docs and tooling", summary: "Cross-cutting docs, agent brief, knowledge graph", paths: ["docs/", "scripts/", "CLAUDE.md", "AGENTS.md", "README.md", ".github/", ".gitignore"] },
 ];
 
@@ -18,11 +18,11 @@ export const outputs = [
   { id: "output:cv-pdf", label: "cv.pdf on the website", summary: "Personal-email CV, compiled on main by website.yml into public/cv.pdf", from: ["cv/main.tex", ".github/workflows/website.yml"] },
   { id: "output:cv-artifacts", label: "CV PDF artifacts", summary: "main.pdf and main-work.pdf from build-cv.yml, after an ATS text check", from: ["cv/main.tex", ".github/workflows/build-cv.yml"] },
   { id: "output:og-image", label: "Link preview image", summary: "website/public/og.jpg, rendered from /og-card/ by make-og.mjs; regenerate by hand", from: ["route:/og-card/", "website/scripts/make-og.mjs"] },
-  { id: "output:pages-site", label: "Public site on GitHub Pages", summary: "website/dist deployed from main when PAGES_ENABLED is true", from: [".github/workflows/website.yml", "website/astro.config.mjs"] },
+  { id: "output:pages-site", label: "Public site on Vercel", summary: "website/dist deployed from main when VERCEL_ENABLED is true", from: [".github/workflows/website.yml", "website/astro.config.mjs"] },
 ];
 
 export const hosts = [
-  { id: "host:github-pages", label: "GitHub Pages", summary: "https://dvez373.github.io/ (user site; old project-site paths forward)", from: ["output:pages-site"] },
+  { id: "host:vercel", label: "Vercel", summary: "https://dvnezkl.vercel.app/ (prebuilt static output; old paths forward)", from: ["output:pages-site"] },
 ];
 
 /** Rules and the paths they govern. Details live in the doc named in "doc". */

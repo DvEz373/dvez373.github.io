@@ -2,9 +2,9 @@
 import { defineConfig, fontProviders } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
-// Published as the GitHub Pages user site https://dvez373.github.io/ (repository DvEz373.github.io).
+// Published on Vercel at https://dvnezkl.vercel.app/ (repository dvnezkl/dvnezkl.github.io).
 // For a custom domain, build with SITE_URL=<url>; for a project site, also set SITE_BASE=/<repository>.
-const site = process.env.SITE_URL ?? "https://dvez373.github.io";
+const site = process.env.SITE_URL ?? "https://dvnezkl.vercel.app";
 const base = process.env.SITE_BASE ?? "/";
 
 // Fonts are self-hosted: Astro copies these files from node_modules into the build.

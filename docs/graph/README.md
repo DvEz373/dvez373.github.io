@@ -106,11 +106,11 @@ flowchart LR
   n9 --> n8
   n10["make-og.mjs"]:::code
   n10 --> n8
-  n11(["Public site on GitHub Pages"]):::out
+  n11(["Public site on Vercel"]):::out
   n5 --> n11
   n12["astro.config.mjs"]:::code
   n12 --> n11
-  n13(["GitHub Pages"]):::out
+  n13(["Vercel"]):::out
   n11 --> n13
   n2 --> n11
   n0 --> n11

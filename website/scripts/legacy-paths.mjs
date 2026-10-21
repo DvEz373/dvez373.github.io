@@ -1,7 +1,7 @@
 // Keeps old links working after the move from the project site (dvez373.github.io/Personal-Profile-Portfolio/)
-// to the user site (dvez373.github.io/) and from /card/ to /namecard/. Runs after `astro build`.
+// to the site root and from /card/ to /namecard/. Runs after `astro build`.
 //
-// GitHub Pages cannot send real redirects, so every old page gets a small HTML page that forwards to the
+// The site is plain static files (no host redirect config), so every old page gets a small HTML page that forwards to the
 // new address (meta refresh plus a script that keeps any #fragment, and a visible link). Files that are not
 // pages (CV, contact card, QR, preview image) are copied to their old paths instead.
 // Printed name cards and their QR codes point to /Personal-Profile-Portfolio/card/, so that path must stay.

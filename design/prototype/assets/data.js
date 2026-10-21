@@ -11,7 +11,7 @@ window.PROFILE = {
   photos: { graduation: "assets/img/graduation", graduationWide: "assets/img/graduation-wide" },
   links: {
     linkedin: "https://www.linkedin.com/in/devin-ezekiel/",
-    github: "https://github.com/DvEz373",
+    github: "https://github.com/dvnezkl",
     instagram: "https://www.instagram.com/dvn.ezekiel/",
   },
   cv: "cv.pdf",
@@ -134,7 +134,7 @@ window.PROFILE = {
       approach: "ESP32 with MEMS microphones streams room data; ML predicts speaker placement; Flutter web dashboard for control.",
       result: "+19% acoustic accuracy, −12% distortion, −23% setup time.",
       tags: ["ESP32", "Flutter", "scikit-learn"],
-      link: "https://github.com/DvEz373/sonodirect-web-flutter",
+      link: "https://github.com/dvnezkl/sonodirect-web-flutter",
       figures: 3,
     },
     {

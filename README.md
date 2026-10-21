@@ -1,14 +1,14 @@
-# DvEz373.github.io
+# dvnezkl.github.io
 
 Devin Ezekiel Purba's personal profile hub: Electrical Engineer · Energy & AI.
 
-- **Website:** <https://dvez373.github.io/>
-- **Name card:** <https://dvez373.github.io/namecard/>
+- **Website:** <https://dvnezkl.vercel.app/>
+- **Name card:** <https://dvnezkl.vercel.app/namecard/>
 
 | # | Part | Folder | Status |
 |---|------|--------|--------|
 | 1 | ATS-friendly CV (LaTeX) | [`cv/`](cv/) | ✅ Building |
-| 2 | Personal profile website (GitHub Pages) | [`website/`](website/) (Astro) | ✅ Live |
+| 2 | Personal profile website (Vercel) | [`website/`](website/) (Astro) | ✅ Live |
 | 3 | Online name card with QR code | [`website/src/pages/namecard/`](website/src/pages/namecard/) | ✅ Live |
 
 ## 1. CV
@@ -35,7 +35,7 @@ checks that an ATS can extract its text, and uploads both variants (personal and
 
 Astro 7 + TypeScript site in [`website/`](website/): run, edit and publish instructions are in [`website/README.md`](website/README.md).
 The **Website** workflow compiles the CV, type-checks, builds and browser-tests every change (desktop, phone, accessibility),
-and deploys `main` to <https://dvez373.github.io/> (gated by the `PAGES_ENABLED` repository variable).
+and deploys `main` to <https://dvnezkl.vercel.app/> on Vercel (gated by the `VERCEL_ENABLED` repository variable).
 
 Personal details live in `website/src/data/*.yaml` and projects in `website/src/content/projects/`; edit and push, and the site rebuilds.
 
@@ -43,9 +43,9 @@ Personal details live in `website/src/data/*.yaml` and projects in `website/src/
 
 | URL | What |
 |---|---|
-| [`/namecard/`](https://dvez373.github.io/namecard/) | Phone card: save contact (.vcf), email, call, WhatsApp, LinkedIn, Instagram, GitHub, website; share and full-screen QR |
-| [`/namecard/print/`](https://dvez373.github.io/namecard/print/) | Print-ready front and back, 85 × 55 mm + 3 mm bleed (Print → Save as PDF, margins None, scale 100%) |
-| [`/namecard-qr.svg`](https://dvez373.github.io/namecard-qr.svg) | Vector QR for print, email signatures and slides |
+| [`/namecard/`](https://dvnezkl.vercel.app/namecard/) | Phone card: save contact (.vcf), email, call, WhatsApp, LinkedIn, Instagram, GitHub, website; share and full-screen QR |
+| [`/namecard/print/`](https://dvnezkl.vercel.app/namecard/print/) | Print-ready front and back, 85 × 55 mm + 3 mm bleed (Print → Save as PDF, margins None, scale 100%) |
+| [`/namecard-qr.svg`](https://dvnezkl.vercel.app/namecard-qr.svg) | Vector QR for print, email signatures and slides |
 
 The QR points to `/namecard/`, so details can change without reprinting. Old links and QR codes (`/Personal-Profile-Portfolio/...`, `/card/`) forward to the new pages. Contact data comes from `website/src/data/profile.yaml`.
 

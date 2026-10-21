@@ -27,8 +27,8 @@ Everything comes from `website/src/data/profile.yaml` (`name`, `givenNames`, `fa
 ## QR
 
 - Built at build time by `website/src/lib/qr.ts` with the `qrcode` package.
-- Encodes the `/namecard/` URL (`cardUrl(site)`, today `https://dvez373.github.io/namecard/`), so card details can change without reprinting.
-- Cards printed before 2026-10-18 encode `https://dvez373.github.io/Personal-Profile-Portfolio/card/`. That address forwards to `/namecard/` (`scripts/legacy-paths.mjs`, checked by a test), so old cards keep working; reprint only when convenient.
+- Encodes the `/namecard/` URL (`cardUrl(site)`, today `https://dvnezkl.vercel.app/namecard/`), so card details can change without reprinting.
+- Cards printed before 2026-10-21 encode a `https://dvez373.github.io/...` address. That host stopped serving when the GitHub account was renamed to `dvnezkl` (decision A10), so those cards no longer resolve: reprint them. The forwarding paths in `scripts/legacy-paths.mjs` still work on the new host.
 - Error correction M, 4-module quiet zone (ISO/IEC 18004). On the print card the QR is 30 mm including the quiet zone (about 24 mm code), above the 2 to 2.5 cm guidance.
 - Dark `#12161c` on white. No logo overlay.
 

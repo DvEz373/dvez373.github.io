@@ -146,7 +146,7 @@ Supporting choices:
 - [GitHub Docs: GitHub Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits)
 - [GitHub Docs: GitHub's plans](https://docs.github.com/get-started/learning-about-github/githubs-products)
 - [GitHub Docs: Changing the visibility of your GitHub Pages site](https://docs.github.com/en/enterprise-cloud@latest/pages/getting-started-with-github-pages/changing-the-visibility-of-your-github-pages-site)
-- [This repo: Deploy website run #1 (failed, Pages not enabled)](https://github.com/DvEz373/Personal-Profile-Portfolio/actions/runs/37113199040)
+- [This repo: Deploy website run #1 (failed, Pages not enabled)](https://github.com/dvnezkl/Personal-Profile-Portfolio/actions/runs/37113199040)
 - [The Open Graph protocol](https://ogp.me/)
 - [web.dev: Rendering on the Web](https://web.dev/articles/rendering-on-the-web)
 - [web.dev: Web Vitals](https://web.dev/articles/vitals)
@@ -168,7 +168,7 @@ Supporting choices:
 [gh-limits]: https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits
 [gh-plans]: https://docs.github.com/get-started/learning-about-github/githubs-products
 [gh-visibility]: https://docs.github.com/en/enterprise-cloud@latest/pages/getting-started-with-github-pages/changing-the-visibility-of-your-github-pages-site
-[run1]: https://github.com/DvEz373/Personal-Profile-Portfolio/actions/runs/37113199040
+[run1]: https://github.com/dvnezkl/Personal-Profile-Portfolio/actions/runs/37113199040
 [ogp]: https://ogp.me/
 [rendering]: https://web.dev/articles/rendering-on-the-web
 [vitals]: https://web.dev/articles/vitals

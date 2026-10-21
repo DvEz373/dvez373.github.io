@@ -12,5 +12,5 @@ approach: ESP32 boards with MEMS microphones stream room measurements; machine-l
 result: About 19% better acoustic accuracy, 12% less distortion and 23% faster setup in the project's tests.
 stack: [ESP32, MEMS microphones, Flutter, scikit-learn, TensorFlow]
 links:
-  - { label: Source code, href: "https://github.com/DvEz373/sonodirect-web-flutter" }
+  - { label: Source code, href: "https://github.com/dvnezkl/sonodirect-web-flutter" }
 ---

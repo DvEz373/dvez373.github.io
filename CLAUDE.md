@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Devin Ezekiel Purba's professional profile: a **website** (Astro 7, `website/`), a **CV** (LaTeX, `cv/`) and a **name card** (`website/src/pages/namecard/`). Public repository; `main` deploys <https://dvez373.github.io/> (repository `DvEz373.github.io`; old `/Personal-Profile-Portfolio/` links forward).
+Devin Ezekiel Purba's professional profile: a **website** (Astro 7, `website/`), a **CV** (LaTeX, `cv/`) and a **name card** (`website/src/pages/namecard/`). Public repository; `main` deploys to Vercel at <https://dvnezkl.vercel.app/> (repository `dvnezkl/dvnezkl.github.io`; old `/Personal-Profile-Portfolio/` and `/card/` paths forward).
 
 ## Rules that are never negotiable
 
@@ -8,7 +8,7 @@ Devin Ezekiel Purba's professional profile: a **website** (Astro 7, `website/`),
 2. **Never invent facts.** Roles, dates, numbers and "My part" lines come from Devin or from already published case studies.
 3. **The private folder and name scanner live only on Devin's PC.** Never ask for their contents or recreate them here.
 4. **Ask Devin before** opening a PR, merging (merging deploys), or changing the CV, unless he already said so for this change. Never force-push or rewrite pushed history.
-5. Commit as `DvEz373 <ezekiel.devin@gmail.com>`. Plain English, short sentences, no em dashes.
+5. Commit as `dvnezkl <ezekiel.devin@gmail.com>`. Plain English, short sentences, no em dashes.
 6. **Visual work is designed, not defaulted.** Any diagram, figure or image: use draw.io, the `frontend-design` and `design:design-critique` skills (and impeccable / taste-skill on Devin's PC), the site palette, and a rendered critique before committing. Guide: `docs/project/diagram-style.md`.
 
 ## Find things without reading everything

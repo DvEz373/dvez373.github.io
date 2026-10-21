@@ -55,6 +55,6 @@ A deny list and a name scanner live in a private folder on Devin's PC, outside t
 
 ## 8. Git and GitHub
 
-- Commit as `DvEz373 <ezekiel.devin@gmail.com>`.
+- Commit as `dvnezkl <ezekiel.devin@gmail.com>`.
 - Never force-push or rewrite pushed history.
 - Ask Devin before opening a PR, merging or changing the CV, unless he has already said so for that change.

@@ -11,7 +11,7 @@ One repository, one person, three products. Together they make Devin Ezekiel Pur
 
 | Product | What a visitor gets | Source | Output |
 |---|---|---|---|
-| **Website** | Portfolio: home, experience, education, projects (8 client case studies, 3 academic), skills, about | `website/` (Astro 7, TypeScript) | Static site on GitHub Pages: <https://dvez373.github.io/> |
+| **Website** | Portfolio: home, experience, education, projects (8 client case studies, 3 academic), skills, about | `website/` (Astro 7, TypeScript) | Static site on Vercel: <https://dvnezkl.vercel.app/> |
 | **CV** | ATS-friendly two-page CV, personal-email and work-email variants | `cv/` (LaTeX) | `cv.pdf` on the website ("Download CV"); both variants as CI artifacts |
 | **Name card** | Phone card with save-contact, share and QR; print layout; vector QR; vCard | `website/src/pages/namecard/`, `namecard-qr.svg.ts`, `devin-ezekiel-purba.vcf.ts` | `/namecard/`, `/namecard/print/`, `/card-qr.svg`, `/devin-ezekiel-purba.vcf` |
 
@@ -29,7 +29,7 @@ The name card is part of the website build. The CV is built separately but is pu
 
 - Website v5 is live: 8 anonymised client case studies, theme filters, design revision R1 to R17. Audit 19/20, critique 25/32 ([v5 plan](../website/07-v5-plan.md) §2.4).
 - CV: Power System Engineer entry in STAR form, no locations, two pages.
-- Name card: live since [PR 8](https://github.com/DvEz373/Personal-Profile-Portfolio/pull/8).
+- Name card: live since [PR 8](https://github.com/dvnezkl/Personal-Profile-Portfolio/pull/8).
 - Not yet done: the private name scan on `main` (Devin's PC only, see [publishing rules](publishing-rules.md)).
 
 ## Where to go next
