@@ -72,3 +72,38 @@ jobs:
           cp -r website/dist .vercel/output/static
           echo '{"version":3,"routes":[{"handle":"filesystem"},{"src":"/.*","status":404,"dest":"/404.html"}]}' > .vercel/output/config.json
           npx --yes vercel@63.1.2 deploy --prebuilt --prod --token "$VERCEL_TOKEN"
+
+  # GitHub Pages cannot be switched off for a *.github.io repository, so dvnezkl.github.io serves
+  # forwarding pages instead of an old copy: every address goes to the same path on Vercel.
+  pages-redirect:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Write forwarding pages
+        run: |
+          mkdir site
+          cat > site/index.html <<'HTML'
+          <!doctype html>
+          <html lang="en">
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="robots" content="noindex">
+          <title>Devin Ezekiel Purba · moved</title>
+          <link rel="canonical" href="https://dvnezkl.vercel.app/">
+          <script>location.replace("https://dvnezkl.vercel.app" + location.pathname + location.search + location.hash);</script>
+          <p>This site moved to <a href="https://dvnezkl.vercel.app/">dvnezkl.vercel.app</a>.</p>
+          </html>
+          HTML
+          # Pages serves 404.html for every other path, so deep links forward too.
+          cp site/index.html site/404.html
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v5

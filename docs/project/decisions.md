@@ -23,6 +23,7 @@ One line per decision that still holds, with where the full reasoning lives. New
 | A8 | 2026-10-03 | Budgets: JS ≤ 40 KB gzip per page, no serious axe violations, keyboard access everywhere | Fast and accessible | 05 §6 |
 | A9 | 2026-10-18 | Site at the root, <https://dvez373.github.io/>: repository renamed to `DvEz373.github.io` (user site), base `/`; forwarding pages keep every old `/Personal-Profile-Portfolio/` link and printed QR working | Devin wants the short address; GitHub does not forward project-site URLs after a rename | [project architecture](architecture.md#base-path-and-urls) |
 | A10 | 2026-10-21 | Site on Vercel at <https://dvnezkl.vercel.app/>, deployed by the Website workflow as prebuilt static output; GitHub account renamed `DvEz373` → `dvnezkl`, repository renamed to `dvnezkl.github.io`. Supersedes the host in A9 and the QR URL in N3 | The account rename ended `dvez373.github.io`; Devin chose Vercel; CI keeps compiling the CV and running tests before deploy | [project architecture](architecture.md#base-path-and-urls) |
+| A11 | 2026-10-21 | `dvnezkl.github.io` serves forwarding pages to the same path on <https://dvnezkl.vercel.app/> (job `pages-redirect` in `website.yml`) | GitHub does not allow switching Pages off for a `*.github.io` repository, and it was serving an outdated copy | [project architecture](architecture.md#base-path-and-urls) |
 
 ## Name card
 
