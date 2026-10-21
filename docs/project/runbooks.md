@@ -93,7 +93,7 @@ Open `/namecard/print/`, then Print → Save as PDF, margins None, scale 100 %, 
 
 ## R-11 Move to a custom domain
 
-Build with `SITE_URL=https://<domain>` (set in `website.yml`), configure Pages, then reprint the cards: the QR encodes the full URL. Add the current `https://dvez373.github.io/` paths to `scripts/legacy-paths.mjs` so existing links keep working.
+Build with `SITE_URL=https://<domain>` (set in `website.yml`), add the domain to the Vercel project, then reprint the cards: the QR encodes the full URL. Add the current `https://dvnezkl.vercel.app/` paths to `scripts/legacy-paths.mjs` so existing links keep working.
 
 ## R-12 Update docs and the knowledge graph
 
@@ -106,7 +106,7 @@ Build with `SITE_URL=https://<domain>` (set in `website.yml`), configure Pages, 
 
 ## R-13 Ship a change
 
-1. Branch from `main`. Commit as `DvEz373 <ezekiel.devin@gmail.com>`; no names in messages.
+1. Branch from `main`. Commit as `dvnezkl <ezekiel.devin@gmail.com>`; no names in messages.
 2. Push, open a PR (ask Devin first), wait for Website / Build CV / Docs checks.
 3. Merge with squash (the repository's convention). Merging deploys.
 4. Check the Website run on `main` (build and deploy jobs) and open the live site.

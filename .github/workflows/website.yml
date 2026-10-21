@@ -57,24 +57,16 @@ jobs:
           path: website/playwright-report
           retention-days: 7
 
-      - name: Upload site for Pages
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: website/dist
-
-  # Runs only once Pages is enabled and the repository variable PAGES_ENABLED is "true"
-  # (see website/README.md), so main stays green until then.
-  deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.PAGES_ENABLED == 'true'
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v5
+      # Deploys the tested build to Vercel as prebuilt static output, so Vercel never rebuilds
+      # (it cannot compile the LaTeX CV). Runs only once VERCEL_ENABLED is "true" (see website/README.md).
+      - name: Deploy to Vercel
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.VERCEL_ENABLED == 'true'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          mkdir -p .vercel/output
+          cp -r dist .vercel/output/static
+          echo '{"version":3,"routes":[{"handle":"filesystem"},{"src":"/.*","status":404,"dest":"/404.html"}]}' > .vercel/output/config.json
+          npx --yes vercel@63.1.2 deploy --prebuilt --prod --token "$VERCEL_TOKEN"

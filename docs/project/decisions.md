@@ -16,12 +16,13 @@ One line per decision that still holds, with where the full reasoning lives. New
 | A1 | 2026-10-03 | Astro 7 with TypeScript; interactivity as small plain-TS scripts, no UI framework runtime | Scored 86/100, first under every weighting; zero JS by default; schema-checked content | [04 framework research](../website/04-framework-research.md) §6 to §7 |
 | A2 | 2026-10-03 | Content as YAML (lists) and Markdown (projects), validated by Zod at build | A typo stops the build instead of shipping a broken page | 04 §7 |
 | A3 | 2026-10-03 | Self-hosted fonts from npm, no CDN | Control and reliability; Google Fonts failed in the test environment | 04 §7 |
-| A4 | 2026-10-03 | Deploy from `main` only, gated by `PAGES_ENABLED` | No red runs before Pages was enabled | 04 §7 |
+| A4 | 2026-10-03 | Deploy from `main` only, gated by `PAGES_ENABLED` (since A10: `VERCEL_ENABLED`) | No red runs before Pages was enabled | 04 §7 |
 | A5 | 2026-10-03 | "Grid & Signal" visual direction: instrument panel and technical drawing, playable frequency demo | Generic v3 look; show, do not tell | [05 visual direction](../website/05-visual-direction.md) §2 |
 | A6 | 2026-10-03 | v4.1: one typeface (Geist), no section numbers or FIG labels, motion pass | Simpler hierarchy | [work log](../website/03-work-log.md) step 9 |
 | A7 | 2026-10-03 | Motion: 120 / 240 / 400 ms, no scroll-jacking, `prefers-reduced-motion` respected | NN/g and WCAG 2.3.3 | 05 §5 |
 | A8 | 2026-10-03 | Budgets: JS ≤ 40 KB gzip per page, no serious axe violations, keyboard access everywhere | Fast and accessible | 05 §6 |
 | A9 | 2026-10-18 | Site at the root, <https://dvez373.github.io/>: repository renamed to `DvEz373.github.io` (user site), base `/`; forwarding pages keep every old `/Personal-Profile-Portfolio/` link and printed QR working | Devin wants the short address; GitHub does not forward project-site URLs after a rename | [project architecture](architecture.md#base-path-and-urls) |
+| A10 | 2026-10-21 | Site on Vercel at <https://dvnezkl.vercel.app/>, deployed by the Website workflow as prebuilt static output; GitHub account renamed `DvEz373` → `dvnezkl`, repository renamed to `dvnezkl.github.io`. Supersedes the host in A9 and the QR URL in N3 | The account rename ended `dvez373.github.io`; Devin chose Vercel; CI keeps compiling the CV and running tests before deploy | [project architecture](architecture.md#base-path-and-urls) |
 
 ## Name card
 

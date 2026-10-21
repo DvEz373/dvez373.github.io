@@ -14,7 +14,7 @@ Read first: [06-design-audit.md](06-design-audit.md) (why), [07-v5-plan.md](07-v
 
 | Item | State |
 |---|---|
-| Repo | `D:\Documents\Projects\Personal-Profile-Portfolio`, GitHub `DvEz373/Personal-Profile-Portfolio`, **public**, deployed to GitHub Pages from `main` |
+| Repo | `D:\Documents\Projects\Personal-Profile-Portfolio`, GitHub `dvnezkl/Personal-Profile-Portfolio`, **public**, deployed to GitHub Pages from `main` |
 | Branch | `website-v5-audit-and-projects`, pushed (no PR yet). On top of `main`: audit, v5, plan + handover, step 0, impeccable plan update, step 1, step 2 |
 | Done on the branch | Audit; certificates fix; public placeholders removed; project schema with real figures (`kind`, `featured`, `also`, `facts`, `figures`); `ProjectCover` / `ProjectCard`; Selected work on Home (demo at the bottom); 2 anonymised client case studies; 24 px chart targets; squeezed-text, placeholder and figure-loading tests; figure-metadata guard (`scripts/figures.mjs` in `npm run check`); screenshot script (`scripts/shots.mjs`); measurement script (`scripts/measure.mjs`) |
 | Last gate | After step 2: `npm run check` 0 errors, figures clean; build 15 pages; Playwright 83 passed, 1 skipped; private name scan clean |
@@ -33,7 +33,7 @@ Read first: [06-design-audit.md](06-design-audit.md) (why), [07-v5-plan.md](07-v
 2. **The private folder stays private.** `D:\Documents\Projects\Portfolio_Private\` (outside the repo) holds the source map, the per-project removal list, the deny list and the name scanner. Never copy its contents, or the source folder names, into the repo.
 3. **Sources are read-only.** Copy figures and `.drawio` files out of the source folder named in the private handover; never edit, move or delete anything there. Edit `.drawio` copies only in the session scratchpad.
 4. **Every figure** goes through: copy (or re-export) → `node scripts/figures.mjs --fix` → look at it → private scan.
-5. **Ask before:** pushing, opening a PR, merging, changing the CV, and anything marked "Needs OK" in the plan. Commit as `DvEz373 <ezekiel.devin@gmail.com>`; `gh` also has a second account, so run `gh auth status` before any push.
+5. **Ask before:** pushing, opening a PR, merging, changing the CV, and anything marked "Needs OK" in the plan. Commit as `dvnezkl <ezekiel.devin@gmail.com>`; `gh` also has a second account, so run `gh auth status` before any push.
 6. **Do not invent facts.** Roles, dates and numbers come from the source summaries or from Devin.
 7. **Devin's publishing terms (plan D7, 2026-10-13):** no names, no locations, **approximate ratings only for every plant** (this overrides the D2 and private-map notes that keep exact ratings for PV, gas engine and biogas), **no internal algorithms** (describe methods at block level: no thresholds, layer sizes, gains or controller logic), as general as possible. Start years only (D8). His roles are in the work log, step 1 entry.
 
@@ -108,7 +108,7 @@ Order: `pumped-storage-dfim-model`, `synchronous-condenser-model`, `ccgt-excitat
 - [x] Update: audit §6 progress table, plan status line, `website/README.md` (add-a-project section: `role`, cover focus, the no-names rule, the figure-metadata check), work log.
 - [x] Final gate on a clean build (`rm -rf website/dist && npm run build`).
 - [x] Send Devin the screenshots (Home, Projects, two case studies; light, dark, phone).
-- [ ] (Cloud session: the branch was pushed; the private scan, the PR and the merge wait on Devin, §8.) **Ask before pushing.** If he agrees: run the private scan once more (it also scans unpushed history), `gh auth status` (DvEz373 active), `git push -u origin website-v5-audit-and-projects`, open a PR to `main` that describes the changes without client details, and let the Website workflow run. Merging deploys the public site.
+- [ ] (Cloud session: the branch was pushed; the private scan, the PR and the merge wait on Devin, §8.) **Ask before pushing.** If he agrees: run the private scan once more (it also scans unpushed history), `gh auth status` (dvnezkl active), `git push -u origin website-v5-audit-and-projects`, open a PR to `main` that describes the changes without client details, and let the Website workflow run. Merging deploys the public site.
 
 ## 5. The gate (every step)
 
@@ -134,10 +134,10 @@ All must pass. If the scan reports a hit in history (an earlier commit on this b
 
 ## 7. Prompt for the next session (Claude Code cloud, GitHub)
 
-From 2026-10-14 the work continues in a Claude Code cloud session on GitHub, not on Devin's PC. Section 8 says what changes. Paste this into a new cloud session on `DvEz373/Personal-Profile-Portfolio`, branch `website-v5-audit-and-projects`.
+From 2026-10-14 the work continues in a Claude Code cloud session on GitHub, not on Devin's PC. Section 8 says what changes. Paste this into a new cloud session on `dvnezkl/Personal-Profile-Portfolio`, branch `website-v5-audit-and-projects`.
 
 ```text
-Continue v5 of Devin Ezekiel Purba's portfolio (Astro 7 + TypeScript in `website/`) in this cloud session. Repository DvEz373/Personal-Profile-Portfolio (PUBLIC, deploys to GitHub Pages from `main`), branch `website-v5-audit-and-projects`.
+Continue v5 of Devin Ezekiel Purba's portfolio (Astro 7 + TypeScript in `website/`) in this cloud session. Repository dvnezkl/Personal-Profile-Portfolio (PUBLIC, deploys to GitHub Pages from `main`), branch `website-v5-audit-and-projects`.
 
 1. Check out `website-v5-audit-and-projects` and confirm `git log -1` is the "Handover: cloud session" commit or later. Do not work on `main`.
 2. Read, in this order: `docs/website/08-handover.md` (task list, rules, gate; section 8 is about this cloud environment), `docs/website/07-v5-plan.md` (decisions D1–D8, §2.4 audit results, backlog R1–R17), the last five entries of `docs/website/03-work-log.md`, and §6 of `docs/website/06-design-audit.md`.

@@ -420,3 +420,9 @@ Research in `docs/card/01-research.md`, build notes in `docs/card/02-build.md` (
 - **Also**: Footer and About links, `playwright.config.ts`, `shots.mjs`, `measure.mjs`, `make-og.mjs`, sitemap filter, README files, CLAUDE.md, project architecture, overview, sources of truth, runbooks R-01, R-10, R-11, card reference, website architecture, graph.
 - **Order of release**: the PR builds for the root, so it is merged and the repository renamed one right after the other; between the two the old address shows an unstyled page for a few minutes.
 - **Checks**: check 0 errors; 21 pages plus 22 forwarding pages; Playwright 97 passed, 5 skipped (new test: old links forward); QR decoded; name card (phone) and print card viewed.
+
+## 2026-10-21 · Account renamed to dvnezkl, site moved to Vercel
+
+- GitHub account `DvEz373` is now `dvnezkl`, so `dvez373.github.io` no longer serves. Every `DvEz373` link (GitHub profile, SonoDirect source, CV header, name card, About) now points to `dvnezkl`; the repository is renamed to `dvnezkl.github.io`.
+- Site moves to Vercel at <https://dvnezkl.vercel.app/> (decision A10). The Website workflow still compiles the CV and runs the tests, then deploys `dist/` with `vercel deploy --prebuilt --prod`, gated by `VERCEL_ENABLED`. The name-card QR now encodes `https://dvnezkl.vercel.app/namecard/`; cards printed earlier need a reprint.
+- **Check:** `npm run check`, `npm run build`, `node scripts/graph.mjs --check`.

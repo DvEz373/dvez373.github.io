@@ -49,14 +49,14 @@ flowchart TB
   W -->|"docs, code, CI files"| DOCS[Docs workflow]:::check
   WEB --> C1["compile cv/main.tex to public/cv.pdf<br/>(main only)"]
   C1 --> C2["npm ci, check, build, test"]
-  C2 -->|"main and PAGES_ENABLED"| DEP[deploy to GitHub Pages]:::out
+  C2 -->|"main and VERCEL_ENABLED"| DEP[deploy to Vercel]:::out
   CVW --> V1["personal and work variants<br/>ATS text check, PDF artifacts"]
   DOCS --> G["node scripts/graph.mjs --check"]
 ```
 
 | Workflow | Triggers | Does |
 |---|---|---|
-| `website.yml` | Push to `main` touching `website/**`, `cv/**` or the workflow; PRs touching `website/**`; manual | On `main`: compiles the CV into `public/cv.pdf`. Always: `npm ci`, `npm run check` (types, content, figure metadata), `npm run build`, Playwright tests. On `main` with `PAGES_ENABLED=true`: deploys `website/dist` to Pages |
+| `website.yml` | Push to `main` touching `website/**`, `cv/**` or the workflow; PRs touching `website/**`; manual | On `main`: compiles the CV into `public/cv.pdf`. Always: `npm ci`, `npm run check` (types, content, figure metadata), `npm run build`, Playwright tests. On `main` with `VERCEL_ENABLED=true`: deploys `website/dist` to Vercel as prebuilt static output |
 | `build-cv.yml` | Push touching `cv/**` or the workflow; PRs touching `cv/**`; manual | Builds both CV variants, checks that an ATS can extract key words and the email, uploads the PDFs |
 | `docs.yml` | Push and PRs touching docs, `CLAUDE.md`, `README.md`, `scripts/`, `website/src/`, `cv/` or workflows | Fails if the knowledge graph is stale or a doc link or `covers:` path is broken |
 
@@ -64,7 +64,7 @@ flowchart TB
 
 ## Base path and URLs
 
-Since 2026-10-18 the site is a GitHub Pages user site: the repository is named `DvEz373.github.io` and the site lives at the root, <https://dvez373.github.io/> (decision A9). `astro.config.mjs` reads `SITE_URL` and `SITE_BASE` (defaults: `https://dvez373.github.io`, `/`). In code, always build links with `url()` from `src/lib/url.ts`, never with a hard-coded `/`, so the base can change again. After `astro build`, `scripts/legacy-paths.mjs` writes a forwarding page for every old address under `/Personal-Profile-Portfolio/` and for `/card/` (now `/namecard/`), and copies the CV, vCard, QR and preview image to their old paths: GitHub does not forward project-site URLs after a rename, and printed cards carry the old QR. A custom domain needs a new `SITE_URL` and a reprint of the name card, because the QR encodes the full URL.
+Since 2026-10-21 the site is hosted on Vercel at the root, <https://dvnezkl.vercel.app/> (decision A10; before that GitHub Pages, A9). The repository is `dvnezkl/dvnezkl.github.io`. `astro.config.mjs` reads `SITE_URL` and `SITE_BASE` (defaults: `https://dvnezkl.vercel.app`, `/`). In code, always build links with `url()` from `src/lib/url.ts`, never with a hard-coded `/`, so the base can change again. After `astro build`, `scripts/legacy-paths.mjs` writes a forwarding page for every old path under `/Personal-Profile-Portfolio/` and for `/card/` (now `/namecard/`), and copies the CV, vCard, QR and preview image to their old paths. These only help on the current host: the old `dvez373.github.io` host stopped serving when the GitHub account was renamed to `dvnezkl`, so cards printed with that QR no longer resolve. A custom domain needs a new `SITE_URL` and a reprint of the name card, because the QR encodes the full URL.
 
 ## Runtime behaviour
 

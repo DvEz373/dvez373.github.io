@@ -83,11 +83,12 @@ node scripts/make-og.mjs               # terminal 2
 
 ## Publishing
 
-The **Website** GitHub Actions workflow builds and tests every pull request that touches `website/`. On `main` it also compiles the CV into `cv.pdf` for the download button and uploads the site. It deploys only after GitHub Pages is switched on:
+The **Website** GitHub Actions workflow builds and tests every pull request that touches `website/`. On `main` it also compiles the CV into `cv.pdf` for the download button and deploys the tested `dist/` to Vercel as prebuilt static output (Vercel does not rebuild, because it cannot compile LaTeX). It deploys only after Vercel is set up:
 
-1. Make the repository public, or use GitHub Pro. The published site is public either way.
-2. **Settings → Pages → Source: GitHub Actions**.
-3. **Settings → Secrets and variables → Actions → Variables**: add `PAGES_ENABLED` = `true`.
-4. Re-run the latest **Website** workflow on `main`. The site appears at <https://dvez373.github.io/>, because the repository is named `DvEz373.github.io` (a GitHub Pages user site).
+1. On <https://vercel.com>, create a project named `dvnezkl` (Add New → Project; any template, or `vercel link` in `website/`). The project name gives the address <https://dvnezkl.vercel.app/>. Turn off its Git integration builds (Settings → Git → Ignored Build Step: "Don't build anything"), so only the workflow deploys.
+2. Create a token: Account Settings → Tokens.
+3. Copy the Team ID (Settings → General) and the Project ID (project Settings → General).
+4. **GitHub → Settings → Secrets and variables → Actions**: secrets `VERCEL_TOKEN`, `VERCEL_ORG_ID` (the Team ID), `VERCEL_PROJECT_ID`; variable `VERCEL_ENABLED` = `true`.
+5. Re-run the latest **Website** workflow on `main`. The site appears at <https://dvnezkl.vercel.app/>.
 
-For a custom domain, build with `SITE_URL=https://your.domain`. As a project site (any other repository name) it would also need `SITE_BASE=/<repository>`. `npm run build` also writes forwarding pages for the old `/Personal-Profile-Portfolio/` and `/card/` addresses (`scripts/legacy-paths.mjs`).
+For a custom domain, build with `SITE_URL=https://your.domain`. Under a sub-path it would also need `SITE_BASE=/<path>`. `npm run build` also writes forwarding pages for the old `/Personal-Profile-Portfolio/` and `/card/` addresses (`scripts/legacy-paths.mjs`).
